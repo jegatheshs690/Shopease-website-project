@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEase - Your Ultimate Online Store</title>
+
+<style>
+  /* ---------- BASIC STYLES ---------- */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* ---------- HEADER ---------- */
+  header {
+    background-color: #232f3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  header img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: #febd69;
+  }
+
+  /* ---------- SEARCH BAR ---------- */
+  .search-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  .search-container input {
+    padding: 8px;
+    width: 300px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+  .search-container button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #febd69;
+    color: #232f3e;
+    font-weight: bold;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+
+  /* ---------- CATEGORY BAR ---------- */
+  nav {
+    background-color: #37475a;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #febd69; }
+
+  /* ---------- BANNER SLIDER ---------- */
+  .banner-slider {
+    position: relative;
+    max-width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+  .banner-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  .banner-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  /* ---------- PRODUCTS SECTION ---------- */
+  .section-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 20px 0 10px 30px;
+    color: #232f3e;
+  }
+  .product-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 20px;
+  }
+  .product-card {
+    background-color: white;
+    flex: 0 0 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .product-card:hover { transform: scale(1.05); }
+  .product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  .product-name {
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  .product-price {
+    color: #b12704;
+    font-weight: bold;
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-section {
+    background-color: white;
+    margin: 40px 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .review-card {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .review-card:last-child { border: none; }
+  .review-name {
+    font-weight: bold;
+    color: #232f3e;
+  }
+  .stars {
+    color: #febd69;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background-color: #232f3e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="shopease.png" alt="ShopEase Logo" class="logo">
+  <h1>ShopEase</h1>
+  <div class="search-container">
+    <input type="text" placeholder="Search for products...">
+    <button>Search</button>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#">Electronics</a>
+  <a href="#">Mobiles</a>
+  <a href="#">Laptops</a>
+  <a href="#">Fashion</a>
+  <a href="#">Home</a>
+  <a href="#">Toys</a>
+  <a href="#">Books</a>
+</nav>
+
+<!-- BANNER SECTION -->
+<section class="banner-slider">
+  <div class="banner-slide">
+    <img src="banner1.jpeg" alt="Banner 1">
+  </div>
+  <div class="banner-slide">
+    <img src="banner2.webp" alt="Banner 2">
+  </div>
+  <div class="banner-slide">
+    <img src="banner3.jpeg" alt="Banner 3">
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<h2 class="section-title">🔥 Trending Products</h2>
+<div class="product-slider" id="product-slider-1">
+  <div class="product-card">
+    <img src="laptop.jpg" alt="Laptop">
+    <p class="product-name">HP Pavilion 15</p>
+    <p class="product-price">₹55,990</p>
+  </div>
+  <div class="product-card">
+    <img src="iphone.jpg" alt="Phone">
+    <p class="product-name">iPhone 15 Pro</p>
+    <p class="product-price">₹1,34,900</p>
+  </div>
+  <div class="product-card">
+    <img src="smartwatches.jpeg" alt="Watch">
+    <p class="product-name">Noise Smartwatch</p>
+    <p class="product-price">₹2,999</p>
+  </div>
+  <div class="product-card">
+    <img src="headphones.jpeg" alt="Headphones">
+    <p class="product-name">Sony WH-1000XM5</p>
+    <p class="product-price">₹24,990</p>
+  </div>
+</div>
+
+<h2 class="section-title">⭐ New Arrivals</h2>
+<div class="product-slider" id="product-slider-2">
+  <div class="product-card">
+    <img src="camera.jpeg" alt="Camera">
+    <p class="product-name">Canon DSLR 200D</p>
+    <p class="product-price">₹48,999</p>
+  </div>
+  <div class="product-card">
+    <img src="samsung.jpeg" alt="TV">
+    <p class="product-name">Samsung 55" Smart TV</p>
+    <p class="product-price">₹59,990</p>
+  </div>
+  <div class="product-card">
+    <img src="airpods.jpeg" alt="Airpods">
+    <p class="product-name">Apple AirPods Pro</p>
+    <p class="product-price">₹21,999</p>
+  </div>
+</div>
+<!-- Dynamic product area (for Option 1 demo) -->
+<h2 class="section-title">🛍 Browse by Category</h2>
+<div style="text-align:center; margin-bottom:10px;">
+  <button onclick="loadCategory('mobiles')">Mobiles</button>
+  <button onclick="loadCategory('electronics')">Electronics</button>
+  <button onclick="loadCategory('fashion')">Fashion</button>
+  <button onclick="loadCategory('toys')">Toys</button>
+  <button onclick="loadCategory('books')">Books</button>
+</div>
+<div id="product-area" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:10px;"></div>
+
+
+<!-- CUSTOMER REVIEWS -->
+<div class="reviews-section">
+  <h2>💬 Customer Reviews</h2>
+  <div class="review-card">
+    <p class="review-name">Arjun Kumar</p>
+    <p class="stars">★★★★★</p>
+    <p>Loved the quality and fast delivery! Will shop again.</p>
+  </div>
+  <div class="review-card">
+    <p class="review-name">Priya Sharma</p>
+    <p class="stars">★★★★☆</p>
+    <p>Nice packaging and good product range.</p>
+  </div>
+  <div class="review-card">
+    <p class="review-name">Rahul Singh</p>
+    <p class="stars">★★★★★</p>
+    <p>Great offers and easy-to-use website!</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 ShopEase | Designed with ❤️ for online shoppers
+</footer>
+
+<!-- JAVASCRIPT FOR SLIDES -->
+<script>
+  // ----- Banner auto-slide -----
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("banner-slide");
+
+  function showBanner() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  // First banner load
+  showBanner();
+  // Change banner every 3 seconds
+  setInterval(showBanner, 3000);
+
+  // ----- Local backend simulation -----
+  const products = {
+    electronics: [
+      { name: "HP Laptop", price: 55990, img: "laptop.jpg" },
+      { name: "Smart TV", price: 49990, img: "samsung.jpeg" }
+    ],
+    mobiles: [
+      { name: "iPhone 15 Pro", price: 134900, img: "iphone.jpg" },
+      { name: "OnePlus 12", price: 54999, img: "oneplus.png" }
+    ],
+    fashion: [
+      { name: "Men’s T-Shirt", price: 999, img: "tshirt.jpeg" },
+      { name: "Women’s Dress", price: 1499, img: "shirt.jpeg" }
+    ],
+    toys: [
+        {name:"kidstoys", price:599, img:"kidstoys.png"},
+        {name:"beartoys", price:799, img:"bear.jpeg"}
+    ],
+    books: [
+        {name:"Mathsguide", price:299, img:"maths.jpeg"},
+        {name:"Csguide", price:249, img:"cs.jpeg"}
+    ]
+
+  };
+
+  function loadCategory(cat) {
+    const container = document.getElementById("product-area");
+    container.innerHTML = "";
+
+    if (!products[cat]) {
+      container.innerHTML = "<p>No products found.</p>";
+      return;
+    }
+
+    products[cat].forEach(p => {
+      container.innerHTML += `
+        <div class="product-card">
+          <img src="${p.img}" alt="${p.name}">
+          <p class="product-name">${p.name}</p>
+          <p class="product-price">₹${p.price}</p>
+        </div>`;
+    });
+  }
+</script>
+
+
+</body>
+</html>
